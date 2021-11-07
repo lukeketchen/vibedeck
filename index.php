@@ -53,6 +53,13 @@
 		transform: translateY(-2px);
 	}
 </style>
+<?php
+	include_once 'config/variables.php';
+	include_once 'config/functions.php';
+
+	$from_all = get_from_all();
+	$from_single = get_from_single();
+?>
 <body>
 	<div class="container">
 		<h1>Vibe Deck</h1>
@@ -65,12 +72,11 @@
 			</button>
 		</div>
 		<?php
-			$json = json_decode(file_get_contents('genres.json'));
-			$one_item = $json[rand(0, count($json) - 1)];
-			$one_item_string = json_encode($one_item);
+		/*
+		<h3><?= $from_all ;?></h3>
+		*/
 		?>
-		<h3><?= $one_item;?></h3>
+		<h3><?= $from_single ;?></h3>
 	</div>
-
 </body>
 </html>
